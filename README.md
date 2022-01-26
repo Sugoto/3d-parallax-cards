@@ -1,1 +1,1 @@
-# 3d-parallax-cards
+# 3D Parallax Card with RGB border glow

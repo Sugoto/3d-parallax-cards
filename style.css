@@ -12,46 +12,93 @@ body {
 .card {
   display: grid;
   grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
+  grid-template-rows: 210px 250px 20px;
   grid-template-areas: "image" "text" "stats";
 
-  font-family: 'Mochiy Pop P One', sans-serif;
+  font-family: "Mochiy Pop P One", sans-serif;
   border-radius: 18px;
-  background: white;
+  background: #1d1d1d;
+  color: white;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   text-align: center;
 
   transition: transform 250ms ease;
   cursor: pointer;
+
+  transform-style: preserve-3d;
+  transform: perspective(1200px);
+}
+
+hr {
+    border: 1px dashed #5ba1a3;
 }
 
 .card-image {
   grid-area: image;
-  background: url("img1.jpg");
+  background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),
+    url("img1.jpg");
   background-size: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
+.rgb::after {
+  content: "";
+  background: linear-gradient(
+      45deg,
+      #ff0000 0%,
+      #ff9a00 10%,
+      #d0de21 20%,
+      #4fdc4a 30%,
+      #3fdad8 40%,
+      #2fc9e2 50%,
+      #1c7fee 60%,
+      #5f15f2 70%,
+      #ba0cf8 80%,
+      #fb07d9 90%,
+      #ff0000 100%
+    )
+    repeat 0% 0% / 300% 100%;
+  position: absolute;
+  inset: -3px;
+  border-radius: 16px;
+  filter: blur(8px);
+  transform: translateZ(-1px);
+  animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .card-text {
   grid-area: text;
   margin: 25px;
+  transform: translateZ(40px);
 }
 
 .card-text .date {
-    color: rgb(255, 7, 110);
-    font-size: 13px;
+  color: rgb(255, 7, 110);
+  font-size: 13px;
 }
 
 .card-text p {
-    color: gray;
-    font-size: 14px;
-    font-weight: 300;
+  color: gray;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .card-text h2 {
-    margin-top: 0px;
-    font-size: 28px;
+  margin-top: 0px;
+  font-size: 28px;
 }
 
 .card-stats {
@@ -65,35 +112,39 @@ body {
 }
 
 .card-stats .stat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
 }
 
 .card-stats .type {
-    font-size: 11px;
-    font-weight: 300;
-    text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .card-stats .value {
-    font-size: 22px;
-    font-weight: 500;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .card-stats .border {
-    border-left: 1px solid red;
-    border-right: 1px solid red;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
 }
 
-.card-stats .value sup{
-    font-size: 12px;
+.card-stats .value sup {
+  font-size: 12px;
 }
 
-.card:hover{
-    transform: scale(1.2);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+.card:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.js-tilt-glare {
+  border-radius: 18px;
 }

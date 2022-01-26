@@ -12,7 +12,7 @@ body {
 .card {
   display: grid;
   grid-template-columns: 300px;
-  grid-template-rows: 210px 250px 20px;
+  grid-template-rows: 170px 300px 20px;
   grid-template-areas: "image" "text" "stats";
 
   font-family: "Mochiy Pop P One", sans-serif;
@@ -36,8 +36,8 @@ hr {
 .card-image {
   grid-area: image;
   background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),
-    url("img1.jpg");
-  background-size: cover;
+    url("img2.jpg");
+  background-size:initial;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -86,7 +86,7 @@ hr {
 }
 
 .card-text .date {
-  color: rgb(255, 7, 110);
+  color: cyan;
   font-size: 13px;
 }
 

@@ -36,8 +36,8 @@ hr {
 .card-image {
   grid-area: image;
   background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%),
-    url("img2.jpg");
-  background-size:initial;
+    url("img3.jpg");
+  background-size:cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
